@@ -1,8 +1,10 @@
-// App.js
+
 import React, { useState } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import FiltersComponent from './Buscador';
 import DataFetchingComponent from './MiApi';
+import './assets/stylos.css'
+
 
 function App() {
   const [tipoIndicador, setTipoIndicador] = useState('uf');
@@ -36,24 +38,24 @@ function App() {
   };
 
   const handleSort = () => {
-    // Toggle the sort order between 'asc' and 'desc'
+   
     setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
   };
 
   const sortedData = data
     ? [...data.serie].sort((a, b) => {
-        // Convert dates to compare them
+  
         const dateA = new Date(a.fecha);
         const dateB = new Date(b.fecha);
 
-        // Determine the sorting order based on sortOrder state
+       
         return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
       })
     : [];
 
   return (
     <>
-      {/* FiltersComponent handles dropdown and date pickers */}
+      
       <FiltersComponent
         tipoIndicador={tipoIndicador}
         setTipoIndicador={setTipoIndicador}
@@ -67,17 +69,17 @@ function App() {
         sortOrder={sortOrder}
       />
 
-      {/* DataFetchingComponent handles fetching data from the API */}
+    
       <DataFetchingComponent tipoIndicador={tipoIndicador} onDataFetched={onDataFetched} />
 
-      {/* Display the table with sorting */}
+      
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>Valor</th>
             <th>
               Fecha{' '}
-              {/* Sort button in the table header */}
+              
               <Button variant="link" size="sm" onClick={handleSort}>
                 {sortOrder === 'asc' ? '↑' : '↓'}
               </Button>
@@ -86,7 +88,7 @@ function App() {
         </thead>
         <tbody>
           {sortedData.map((item) => (
-            // Check if the date is within the selected date range
+          
             (!startDate || !endDate || isDateInRange(new Date(item.fecha), startDate, endDate)) && (
               <tr key={item.fecha}>
                 <td>{item.valor}</td>

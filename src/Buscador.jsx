@@ -1,4 +1,4 @@
-// FiltersComponent.js
+
 import React from 'react';
 import { Dropdown, DropdownButton, Button } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
@@ -20,7 +20,7 @@ const FiltersComponent = ({
     <div>
       <h2>Valores del Indicador</h2>
 
-      {/* Dropdown for tipoIndicador */}
+      
       <DropdownButton id="dropdown-tipoIndicador" title={`Tipo Indicador: ${tipoIndicador}`}>
         {['uf', 'ivp', 'dolar', 'dolar_intercambio', 'euro', 'ipc', 'utm', 'imacec', 'tpm', 'libra_cobre', 'tasa_desempleo', 'bitcoin'].map((indicador) => (
           <Dropdown.Item key={indicador} onClick={() => setTipoIndicador(indicador)}>
@@ -29,7 +29,7 @@ const FiltersComponent = ({
         ))}
       </DropdownButton>
 
-      {/* Datepickers for filtering by date range */}
+      
       <div>
         <label>Start Date:</label>
         <div className="date-picker-container">
@@ -53,7 +53,7 @@ const FiltersComponent = ({
         </div>
       </div>
 
-      {/* Sort button */}
+      
       <div>
         <Button variant="secondary" onClick={handleSort}>
           Sort by Fecha

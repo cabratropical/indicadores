@@ -1,4 +1,3 @@
-// DataFetchingComponent.js
 import { useEffect } from 'react';
 
 const DataFetchingComponent = ({ tipoIndicador, onDataFetched }) => {
@@ -19,7 +18,7 @@ const DataFetchingComponent = ({ tipoIndicador, onDataFetched }) => {
     fetchData();
   }, [tipoIndicador]);
 
-  return null; // No need to render anything in this component
+  return null; 
 };
 
 export default DataFetchingComponent;

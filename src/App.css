@@ -1,31 +1,28 @@
-/* App.css (or your preferred CSS file) */
-
-/* Container styling */
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Header styling */
+
 h2 {
   color: #333;
   margin-bottom: 20px;
 }
 
-/* Dropdown styling */
+
 #dropdown-tipoIndicador {
   margin-bottom: 20px;
 }
 
-/* Datepicker styling */
+
 label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-/* Table styling */
+
 .table {
   width: 100%;
   border-collapse: collapse;
